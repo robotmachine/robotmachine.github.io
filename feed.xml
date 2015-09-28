@@ -6,8 +6,8 @@
 </description>
     <link>https://robotmachine.github.io/</link>
     <atom:link href="https://robotmachine.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 27 Sep 2015 23:27:42 -0700</pubDate>
-    <lastBuildDate>Sun, 27 Sep 2015 23:27:42 -0700</lastBuildDate>
+    <pubDate>Mon, 28 Sep 2015 11:06:46 -0700</pubDate>
+    <lastBuildDate>Mon, 28 Sep 2015 11:06:46 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -22,6 +22,8 @@ As soon as I arrived home I took the plastic off the case and put it in my CD pl
         <guid isPermaLink="true">https://robotmachine.github.io/blog/2015/06/30/Smiths.html</guid>
         
         
+        <category>blog</category>
+        
         <category>stories</category>
         
       </item>
@@ -35,6 +37,8 @@ As soon as I arrived home I took the plastic off the case and put it in my CD pl
         <guid isPermaLink="true">https://robotmachine.github.io/blog/2014/06/15/Scrabble.html</guid>
         
         
+        <category>blog</category>
+        
       </item>
     
       <item>
@@ -45,6 +49,21 @@ As soon as I arrived home I took the plastic off the case and put it in my CD pl
         <link>https://robotmachine.github.io/blog/2014/06/15/Big-Brother.html</link>
         <guid isPermaLink="true">https://robotmachine.github.io/blog/2014/06/15/Big-Brother.html</guid>
         
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>QuickLedger</title>
+        <description>&lt;p&gt;This is a page about QuickLedger&lt;/p&gt;
+</description>
+        <pubDate>Wed, 14 May 2014 00:00:00 -0700</pubDate>
+        <link>https://robotmachine.github.io/blog/2014/05/14/ql.html</link>
+        <guid isPermaLink="true">https://robotmachine.github.io/blog/2014/05/14/ql.html</guid>
+        
+        
+        <category>projects</category>
         
       </item>
     
@@ -62,6 +81,8 @@ You can hear a computer say it &lt;a href=&quot;http://translate.google.com/#en/
         <link>https://robotmachine.github.io/blog/2013/03/13/Odin.html</link>
         <guid isPermaLink="true">https://robotmachine.github.io/blog/2013/03/13/Odin.html</guid>
         
+        
+        <category>blog</category>
         
       </item>
     
