@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>QuickLedger</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Ledger Entry Tool">
+
+  <link rel="stylesheet" href="/main.css">
+  <link rel="canonical" href="https://robotmachine.github.io/projects/2014/05/14/ql.html">
+  <link rel="alternate" type="application/rss+xml" title="[ robot ] + [ machine ]" href="https://robotmachine.github.io/feed.xml" />
+</head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+          <h1>[ robot ] + [ machine ]</h1>
+            <div class="nav">
+            <a href="https://robotmachine.github.io">about</a>
+            &nbsp;|&nbsp;
+            <a href="https://robotmachine.github.io/blog/">blog</a>
+            &nbsp;|&nbsp;
+            <a href="https://robotmachine.github.io/projects/">projects</a>
+            &nbsp;|&nbsp;
+            <a href="https://twitter.com/robotmachine" target="_blank">twitter</a>
+            &nbsp;|&nbsp;
+            <a href="https://github.com/robotmachine" target="_blank">github</a>
+            &nbsp;|&nbsp;
+            <a href="https://flickr.com/photos/robotmachine" target="_blank">flickr</a>
+          </div>
+
+
+      </div>
+        <div class="box">
+          </div>
+  <h1 class="project">QuickLedger</h1>
+<div class="box">
+  <a href="http://ledger-cli.org">Ledger</a> Entry Tool
+  <h4>Install</h4>
+
+<ol>
+<li>Download <a href="https://github.com/robotmachine/QuickLedger/tarball/master">the archive</a></li>
+<li>Run <code>chmod +x ql</code></li>
+<li>Move <code>ql</code> to <code>/usr/local/bin/</code> or somewhere else in <code>$PATH</code></li>
+</ol>
+
+<h4>Usage</h4>
+
+<p>The first time you run <code>ql</code> it will try to figure out where your Ledger data file is located based on <code>$LEDGER</code> and <code>$LEDGER_FILE</code> environment variables and store this in a ~/.qlrc file. If nothing is found, it will just ask you.<br>
+```
+usage: ql [-h] [-f LEDGER_FILE] [-a ACCOUNT] [-m MERCHANT] [-c CATEGORY]
+          [-e EXPENSE] [-t AMOUNT] [-s] [-x] [--list] [--set-acct]
+          [--set-merch] [--set-cat] [--config ALT_CONFIG] [-v]</p>
+
+<p>QuickLedger: Entry creation utility for http://ledger-cli.org</p>
+
+<p>optional arguments:
+  -h, --help            show this help message and exit
+  -f LEDGER<em>FILE, --file LEDGER</em>FILE
+                        Specify Ledger data file.
+  -a ACCOUNT, --account ACCOUNT
+                        Specify account.
+  -m MERCHANT, --merchant MERCHANT
+                        Set merchant.
+  -c CATEGORY, --category CATEGORY
+                        Set transaction category.
+  -e EXPENSE, --expense EXPENSE
+                        Set expense category. (Prepends &#39;Expenses:&#39;
+  -t AMOUNT, --amount AMOUNT
+                        Set transaction amount.
+  -s, --split           Split payment.
+  -x, --not-cleared     Mark transaction as not-cleared/pending.
+  --list                List settings in config file.
+  --set-acct            Set up accounts in config file.
+  --set-merch           Set up merchants in config file.
+  --set-cat             Set up categories in config file.
+  --config ALT_CONFIG   Specify alternate config file.
+  -v, --version         Print version.
+```</p>
+
+<h4>Configuration File</h4>
+
+<p><code>ql</code> keeps all data in <code>$HOME/.qlrc</code><br>
+Here is a sample of what one might look like:<br>
+<code>$&gt; cat ~/.qlrc</code>  </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">[file]  
+ledger_file = /home/robotmachine/doc/Ledger.dat  
+
+[account]
+default_account = CHEQ 
+CHEQ = Assets:MyBank:Chequing  
+SAVE = Assets:MyBank:Savings  
+
+[merchant]  
+SD = Sundance Natural Foods  
+SQ = SeQUential Biofuels  
+
+[category]
+groc = Expenses:Groceries
+SD = Expenses:Groceries  
+SQ = Expenses:Auto:Fuel  
+</code></pre></div>
+<p>The ~/.qlrc file can be manually edited or you can use the various setup options, --set-acct, --set-cat, --set-merch to have <code>ql</code> add them to ~/.qlrc for you.  </p>
+
+<h4>Usage Continued</h4>
+
+<p>When using the <code>ql -a ACCOUNT</code> option, <code>ql</code> will attempt to match the entry with one of the accounts in the [account] section of ~/.qlrc If a match is not found, the literal string will be used.  </p>
+
+<p>The same is true of the <code>ql -m MERCHANT</code> option. If a match is found for the merchant and the same entry is present under [category], then the category will be used. If that does not match, then it will prompt interactively for an expense category.  </p>
+
+<p>The -s/--split option will take the -t amount as the total (or prompt for one) and prompt through splitting the transaction between multiple categories (see example). <code>ql</code> does its best to make sure the transaction will balance and will add the total as a negative balance which will cause an error in <code>Ledger</code> if the amounts do not reconcile. Entering a 0 for any of the splits will use the remainder of the balance.  </p>
+
+<p>The -x/--not-cleared option will use a ! instead of * between the date and the merchant as per the <code>Ledger</code> documentation to mark the transaction as not cleared. Please see <code>Ledger</code> documentation on how this works. Note: You will need to manually edit your ledger.dat file to mark it as cleared. Re-running <code>ql</code> without the -x will not mark the transaction as cleared-- it will only add an additional entry for the same amount.  </p>
+
+<h4>Examples</h4>
+
+<p>Everyone loves examples. The above .qlrc file is assumed for the examples.  </p>
+
+<p><code>ql -m SD -t 27.50</code> will append the following to /home/robotmachine/doc/Ledger.dat<br>
+<code>
+2014-11-01 * Sundance Natural Foods  
+    Expenses:Groceries      $27.50  
+    Assets:MyBank:Chequing  
+</code></p>
+
+<h5>Split Transaction</h5>
+
+<p><code>ql -m SD -t 100</code>
+```
+Total is $100.00<br>
+Enter &#39;0&#39; for the remainder.  </p>
+
+<p>Enter amount for split number 1:        $75<br>
+Enter category for split number 1:      Expenses:Expenses:Groceries  </p>
+
+<p>$25.00 remaining.<br>
+Enter amount for split number 2:        $0<br>
+Enter category for split number 2:      Expenses:Heathcare:Supplements  </p>
+
+<p>Wrote entry to /home/robotmachine/doc/Ledger.dat:<br>
+2014-12-27 * Sundance Natural Foods 
+        Expenses:Heathcare:Supplements  $25.00<br>
+        Expenses:Groceries              $75.00<br>
+        Assets:MyBank:Chequing          $-100.00<br>
+```</p>
+
+
+        </div>
+      <div class="footer">
+        <small>&copy;1983-2015 Brian A. Carter</small>
+
+      </div>
+    </div>
+  </body>
+</html>

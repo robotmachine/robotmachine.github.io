@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>PushText</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Command Line Tool for Pushover">
+
+  <link rel="stylesheet" href="/main.css">
+  <link rel="canonical" href="https://robotmachine.github.io/projects/2012/10/23/pt.html">
+  <link rel="alternate" type="application/rss+xml" title="[ robot ] + [ machine ]" href="https://robotmachine.github.io/feed.xml" />
+</head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+          <h1>[ robot ] + [ machine ]</h1>
+            <div class="nav">
+            <a href="https://robotmachine.github.io">about</a>
+            &nbsp;|&nbsp;
+            <a href="https://robotmachine.github.io/blog/">blog</a>
+            &nbsp;|&nbsp;
+            <a href="https://robotmachine.github.io/projects/">projects</a>
+            &nbsp;|&nbsp;
+            <a href="https://twitter.com/robotmachine" target="_blank">twitter</a>
+            &nbsp;|&nbsp;
+            <a href="https://github.com/robotmachine" target="_blank">github</a>
+            &nbsp;|&nbsp;
+            <a href="https://flickr.com/photos/robotmachine" target="_blank">flickr</a>
+          </div>
+
+
+      </div>
+        <div class="box">
+          </div>
+  <h1 class="project">PushText</h1>
+<div class="box">
+  Command Line Tool for <a href="https://pushover.net">Pushover</a>
+  <h4>Installation:</h4>
+
+<ol>
+<li>Download <a href="https://github.com/robotmachine/PushText/tarball/master">the archive</a><br></li>
+<li>Run <code>chmod +x pt</code></li>
+<li>Move <code>pt</code> to <code>/usr/local/bin</code> or somewhere else in <code>$PATH</code></li>
+</ol>
+
+<h4>Configuration:</h4>
+
+<p>If you run <code>pt</code> without any setup it will ask for your API token and your user key.<br>
+The user key is on your <a href="http://pushover.net">user page</a>.<br>
+You must create an application with Pushover in order to send messages.<br>
+See <a href="https://pushover.net/apps">Pushover Apps</a> for more information.  </p>
+
+<h4>Examples:</h4>
+
+<p>The simplest example would be to let you know when something finishes on your computer.
+<code>$&gt; make ; make install ; pt --title &quot;make&quot; --message &quot;Done compiling.&quot;</code><br>
+The above will result in this on your phone:<br>
+<img src="http://mlkshk.com/r/L2TK.jpg" alt="pt example" title="pt example"></p>
+
+<p>You could also use it to let you know if something breaks.
+<code>$&gt; some script ; if [ &quot;$?&quot; -ne &quot;0&quot; ]; then pt -m &quot;Oops, you bwoke it.&quot; ; fi</code></p>
+
+<p>Send your <a href="https://github.com/ginatrapani/todo.txt-cli">Todo.txt</a> list daily:
+<code>bash
+$&gt; crontab -l | grep pt
+30 10 * * * /usr/local/bin/pt --title &quot;Todo&quot; -m &quot;`/usr/local/bin/todo ls`&quot; -d iphone
+</code></p>
+
+<p>The possibilities are endless! (As long as the possibilities only include sending messages to your phone.)  </p>
+
+<h4>Manual:</h4>
+<div class="highlight"><pre><code class="language-text" data-lang="text">usage: pt [-h] [-u USER_KEY] [-t TOKEN_KEY] [-p PRIORITY] [-m MESSAGE]
+          [-d DEVICE] [--title TITLE] [--url URL] [--urltitle URL_TITLE] [-v]
+
+PushText: Command line tool for http://pushover.net
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u USER_KEY, --user-key USER_KEY
+                        User key instead of reading from settings.
+  -t TOKEN_KEY, --token-key TOKEN_KEY
+                        Token key instead of reading from settings.
+  -p PRIORITY, --priority PRIORITY
+                        Set priority of high or low. Default is normal.
+  -m MESSAGE, --message MESSAGE
+                        Message to send. Default is &quot;PushText&quot;
+  -d DEVICE, --device DEVICE
+                        Device name to receive message. Default sends to all
+                        devices.
+  --title TITLE         Title or application name. Default is PushText
+  --url URL             Optional URL to accompany your message.
+  --urltitle URL_TITLE  Title to go with your URL.
+  -v, --version         Print version.
+</code></pre></div>
+
+        </div>
+      <div class="footer">
+        <small>&copy;1983-2015 Brian A. Carter</small>
+
+      </div>
+    </div>
+  </body>
+</html>
