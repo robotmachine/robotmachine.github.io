@@ -31,10 +31,10 @@
 
       </div>
         <div class="content">
-          </div>
-  <h1 class="project">QuickLedger</h1>
-<div class="box">
+          <div class="box"> &nbsp; </div>
+  <h1 class="post"><a href="https://github.com/robotmachine/QuickLedger">QuickLedger</a>  | Version 0.7</h1>
   <a href="http://ledger-cli.org">Ledger</a> Entry Tool
+<div class="box">
   <h4>Install</h4>
 
 <ol>
@@ -45,17 +45,16 @@
 
 <h4>Usage</h4>
 
-<p>The first time you run <code>ql</code> it will try to figure out where your Ledger data file is located based on <code>$LEDGER</code> and <code>$LEDGER_FILE</code> environment variables and store this in a ~/.qlrc file. If nothing is found, it will just ask you.<br>
-```
-usage: ql [-h] [-f LEDGER_FILE] [-a ACCOUNT] [-m MERCHANT] [-c CATEGORY]
+<p>The first time you run <code>ql</code> it will try to figure out where your Ledger data file is located based on <code>$LEDGER</code> and <code>$LEDGER_FILE</code> environment variables and store this in a ~/.qlrc file. If nothing is found, it will just ask you.  </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">usage: ql [-h] [-f LEDGER_FILE] [-a ACCOUNT] [-m MERCHANT] [-c CATEGORY]
           [-e EXPENSE] [-t AMOUNT] [-s] [-x] [--list] [--set-acct]
-          [--set-merch] [--set-cat] [--config ALT_CONFIG] [-v]</p>
+          [--set-merch] [--set-cat] [--config ALT_CONFIG] [-v]
 
-<p>QuickLedger: Entry creation utility for http://ledger-cli.org</p>
+QuickLedger: Entry creation utility for http://ledger-cli.org
 
-<p>optional arguments:
+optional arguments:
   -h, --help            show this help message and exit
-  -f LEDGER<em>FILE, --file LEDGER</em>FILE
+  -f LEDGER_FILE, --file LEDGER_FILE
                         Specify Ledger data file.
   -a ACCOUNT, --account ACCOUNT
                         Specify account.
@@ -75,8 +74,7 @@ usage: ql [-h] [-f LEDGER_FILE] [-a ACCOUNT] [-m MERCHANT] [-c CATEGORY]
   --set-cat             Set up categories in config file.
   --config ALT_CONFIG   Specify alternate config file.
   -v, --version         Print version.
-```</p>
-
+</code></pre></div>
 <h4>Configuration File</h4>
 
 <p><code>ql</code> keeps all data in <code>$HOME/.qlrc</code><br>
@@ -115,34 +113,31 @@ SQ = Expenses:Auto:Fuel
 
 <p>Everyone loves examples. The above .qlrc file is assumed for the examples.  </p>
 
-<p><code>ql -m SD -t 27.50</code> will append the following to /home/robotmachine/doc/Ledger.dat<br>
-<code>
-2014-11-01 * Sundance Natural Foods  
+<p><code>ql -m SD -t 27.50</code> will append the following to /home/robotmachine/doc/Ledger.dat  </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">2014-11-01 * Sundance Natural Foods  
     Expenses:Groceries      $27.50  
     Assets:MyBank:Chequing  
-</code></p>
-
+</code></pre></div>
 <h5>Split Transaction</h5>
 
-<p><code>ql -m SD -t 100</code>
-```
-Total is $100.00<br>
-Enter &#39;0&#39; for the remainder.  </p>
+<p><code>ql -m SD -t 100</code></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Total is $100.00  
+Enter &#39;0&#39; for the remainder.  
 
-<p>Enter amount for split number 1:        $75<br>
-Enter category for split number 1:      Expenses:Expenses:Groceries  </p>
+Enter amount for split number 1:        $75  
+Enter category for split number 1:      Expenses:Expenses:Groceries  
 
-<p>$25.00 remaining.<br>
-Enter amount for split number 2:        $0<br>
-Enter category for split number 2:      Expenses:Heathcare:Supplements  </p>
+$25.00 remaining.  
+Enter amount for split number 2:        $0  
+Enter category for split number 2:      Expenses:Heathcare:Supplements  
 
-<p>Wrote entry to /home/robotmachine/doc/Ledger.dat:<br>
+Wrote entry to /home/robotmachine/doc/Ledger.dat:  
 2014-12-27 * Sundance Natural Foods 
-        Expenses:Heathcare:Supplements  $25.00<br>
-        Expenses:Groceries              $75.00<br>
-        Assets:MyBank:Chequing          $-100.00<br>
-```</p>
-
+        Expenses:Heathcare:Supplements  $25.00    
+        Expenses:Groceries              $75.00  
+        Assets:MyBank:Chequing          $-100.00  
+</code></pre></div>
+</div>
 
         </div>
       <div class="footer">
