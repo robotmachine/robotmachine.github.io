@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>GoToLogFiles</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Unofficial OSX Log File Collector for Citrix SaaS Products">
+
+  <link rel="stylesheet" href="/main.css">
+  <link rel="canonical" href="https://robotmachine.github.io/projects/2012/09/03/GoToLogFiles.html">
+  <link rel="alternate" type="application/rss+xml" title="[ robot ] + [ machine ]" href="https://robotmachine.github.io/feed.xml" />
+</head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+          <h1>[ robot ] + [ machine ]</h1>
+            <div class="nav">
+            <a href="https://robotmachine.github.io">about</a>
+            &nbsp;|&nbsp;
+            <a href="https://robotmachine.github.io/blog/">blog</a>
+            &nbsp;|&nbsp;
+            <a href="https://robotmachine.github.io/projects/">projects</a>
+            &nbsp;|&nbsp;
+            <a href="https://twitter.com/robotmachine" target="_blank">twitter</a>
+            &nbsp;|&nbsp;
+            <a href="https://github.com/robotmachine" target="_blank">github</a>
+            &nbsp;|&nbsp;
+            <a href="https://flickr.com/photos/robotmachine" target="_blank">flickr</a>
+          </div>
+
+
+      </div>
+        <div class="content">
+          <div class="box"> &nbsp; </div>
+  <h1 class="post">GoToLogFiles</a>  | Version 1.2</h1>
+  Unofficial OSX Log File Collector for Citrix SaaS Products<br>
+  <a href="https://github.com/robotmachine/GoToLogFiles">View GoToLogFiles on Github</a>
+<div class="box">
+  <h3>Supported Products:</h3>
+
+<ul>
+<li>GoToMeeting/GoToWebinar/GoToTraining</li>
+<li>GoToMyPC</li>
+<li>GoToAssist Corporate &amp; Remote Support</li>
+<li>ShareConnect</li>
+</ul>
+
+<p>Just need to download the tool? <a href="https://citrix.sharefile.com/d-s4aa711b3b514e928">Click Here</a>  </p>
+
+<h2>CHANGELOG</h2>
+
+<h3>17 August, 2015 (v 1.2):</h3>
+
+<ul>
+<li>Added ShareConnect</li>
+</ul>
+
+<h3>20 July, 2015 (v 1.1):</h3>
+
+<ul>
+<li>Drastically cut down scripting-- down to a single file<br></li>
+<li>GoToMyPC host and client merged to one entry<br></li>
+<li>GoToAssist RS and Corp merged to one entry<br></li>
+<li>User prompt now built in to shell script<br></li>
+<li>Desktop folder is popped after log file collection<br></li>
+</ul>
+
+<h3>13 July, 2015 (v 0.9):</h3>
+
+<ul>
+<li>Printing plist files to text files<br></li>
+</ul>
+
+<h3>26 June, 2015 (v 0.8):</h3>
+
+<ul>
+<li>Cut down on redundant scripting</li>
+<li>Created a start.sh and finish.sh for all logging that is common to all products</li>
+<li>Rewrote Voltron to use a function to reduce redundancy<br></li>
+</ul>
+
+<h3>25 June, 2015 (v 0.6):</h3>
+
+<ul>
+<li>Simplified output of ps for running process log</li>
+<li>Added <code>diskutil list</code> and <code>df -H</code> logging to Disk_Info.txt</li>
+</ul>
+
+<h3>11 March, 2015 (v 0.5):</h3>
+
+<ul>
+<li>Removed GoToMeeting Recording logs as they are no longer needed<br></li>
+<li>File name now has a Unix Epoch date stamp to avoid globbed files<br></li>
+<li>After the logs are collected, a prompt notifies that the process is complete<br></li>
+<li>Samples are collected of the GoToMeeting EP and RecMgr if they are running<br></li>
+</ul>
+
+</div>
+
+        </div>
+      <div class="footer">
+        <small>&nbsp;&nbsp;&copy;1983-2015 Brian A. Carter</small>
+
+      </div>
+    </div>
+  </body>
+</html>
