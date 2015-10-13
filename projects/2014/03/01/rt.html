@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>RoboTag</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Automated MP3 tagging.">
+
+  <link rel="stylesheet" href="/main.css">
+  <link rel="canonical" href="https://robotmachine.github.io/projects/2014/03/01/rt.html">
+  <link rel="alternate" type="application/rss+xml" title="[ robot ] + [ machine ]" href="https://robotmachine.github.io/feed.xml" />
+</head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+          <h1>[ robot ] + [ machine ]</h1>
+            <div class="nav">
+            <a href="https://robotmachine.github.io">home</a>
+            &nbsp;|&nbsp;
+            <a href="https://robotmachine.github.io/blog/archive.html">blog archive</a>
+            &nbsp;|&nbsp;
+            <a href="https://robotmachine.github.io/projects/">projects</a>
+            &nbsp;|&nbsp;
+            <a href="https://robotmachine.github.io/about.html">about</a>
+          </div>
+
+
+      </div>
+        <div class="content">
+          <div class="box"> &nbsp; </div>
+  <h1 class="post">RoboTag</a>  | Version 3.2</h1>
+  Automated MP3 tagging.<br>
+  <a href="https://github.com/robotmachine/RoboTag">View RoboTag on Github</a>
+<div class="box">
+  <h3>Dependencies:</h3>
+
+<ul>
+<li><a href="http://eyed3.nicfit.net">eyeD3</a> v0.7.5</li>
+<li><a href="http://imagemagick.org">Image Magick</a></li>
+<li><a href="https://github.com/sahib/glyr">glyr</a></li>
+</ul>
+
+<h2>How It Works</h2>
+
+<p><code>rt</code> uses file names, directory names, and metadata files to create ID3v2 tags on MP3 files. The goal is to create clean tags without unwanted junk in them without having to go full manual. As an added bonus the use of metadata files allows non Latin characters to be stored safely outside of filenames while still resulting in properly spelled tags.  </p>
+
+<p><code>rt</code> expects a directory structure where an Artist Name directory contains Album Name directories which then contain MP3 files. An example of the full path to the fifth track on the second disc of Radiohead&#39;s 2007 album &quot;In Rainbows&quot; would be as follows:<br>
+<code>/home/brian/music/Radiohead/2007 In Rainbows/02-05 Last Flowers.mp3</code></p>
+
+<p><code>rt</code> is run from inside the Album Name folder and will find MP3 files located within.  </p>
+
+<h2>Metadata Files</h2>
+
+<p>A metadata file inside of the Album Name folder will supersede a metadata file of the same name in the Artist Name directory. (ie. If both <code>2007 In Rainbows/.genre.txt</code> and <code>Radiohead/.genre.txt</code> exist in the example above, the data from <code>2007 In Rainbows/.genre.txt</code> will be used.<br>
+Only the first line is read for files that are only meant to contain a single value (ie. .artist.txt). Any additional data is ignored.  </p>
+
+<h4>.album.txt</h4>
+
+<p>Contains the title of the album.  </p>
+
+<h4>.albumartist.txt</h4>
+
+<p>Contains the name to be used in the Album Artist field.<br>
+Example usage: Thee Silver Mt. Zion Memorial Orchestra has used several different names for various releases, but you don&#39;t want them randomly sorted everywhere. Album Artist is supported by most MP3 players and will allow all releases to be sorted together, but display the right artist name for the release.  </p>
+
+<h4>.artist.txt</h4>
+
+<p>Contains the artist name.</p>
+
+<h4>.genre.txt</h4>
+
+<p>Contains the genre name for the artist or album.    </p>
+
+<h4>.tracks01.txt; tracks02.txt; &amp;c</h4>
+
+<p>The title of the album tracks. The first line corresponds to the first track and so on. In the event of a multi-disc album, the metadata file should be .tracks01.txt, tracks02.txt and so on.  </p>
+
+<h3>Locations</h3>
+
+<h4>Within the Artist Name folder, the following metadata files are supported:</h4>
+
+<ul>
+<li>.artist.txt</li>
+<li>.genre.txt</li>
+</ul>
+
+<h4>Within the Album Name folder, the following metadata files are supported:</h4>
+
+<ul>
+<li>.album.txt</li>
+<li>.albumartist.txt</li>
+<li>.artist.txt</li>
+<li>.genre.txt</li>
+<li>.tracks01.txt</li>
+<li>.year.txt</li>
+</ul>
+
+</div>
+
+        </div>
+      <div class="footer">
+        <small>&nbsp;&nbsp;&copy;1983-2015 Brian A. Carter</small>
+
+      </div>
+    </div>
+  </body>
+</html>
