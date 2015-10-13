@@ -6,8 +6,8 @@
 </description>
     <link>https://robotmachine.github.io/</link>
     <atom:link href="https://robotmachine.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Oct 2015 10:21:33 -0700</pubDate>
-    <lastBuildDate>Fri, 09 Oct 2015 10:21:33 -0700</lastBuildDate>
+    <pubDate>Mon, 12 Oct 2015 22:01:06 -0700</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2015 22:01:06 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -222,6 +222,80 @@ Wrote entry to /home/robotmachine/doc/Ledger.dat:
         <pubDate>Wed, 14 May 2014 00:00:00 -0700</pubDate>
         <link>https://robotmachine.github.io/projects/2014/05/14/ql.html</link>
         <guid isPermaLink="true">https://robotmachine.github.io/projects/2014/05/14/ql.html</guid>
+        
+        
+        <category>projects</category>
+        
+      </item>
+    
+      <item>
+        <title>RoboTag</title>
+        <description>&lt;h3&gt;Dependencies:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://eyed3.nicfit.net&quot;&gt;eyeD3&lt;/a&gt; v0.7.5&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://imagemagick.org&quot;&gt;Image Magick&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sahib/glyr&quot;&gt;glyr&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;How It Works&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;rt&lt;/code&gt; uses file names, directory names, and metadata files to create ID3v2 tags on MP3 files. The goal is to create clean tags without unwanted junk in them without having to go full manual. As an added bonus the use of metadata files allows non Latin characters to be stored safely outside of filenames while still resulting in properly spelled tags.  &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rt&lt;/code&gt; expects a directory structure where an Artist Name directory contains Album Name directories which then contain MP3 files. An example of the full path to the fifth track on the second disc of Radiohead&amp;#39;s 2007 album &amp;quot;In Rainbows&amp;quot; would be as follows:&lt;br&gt;
+&lt;code&gt;/home/brian/music/Radiohead/2007 In Rainbows/02-05 Last Flowers.mp3&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rt&lt;/code&gt; is run from inside the Album Name folder and will find MP3 files located within.  &lt;/p&gt;
+
+&lt;h2&gt;Metadata Files&lt;/h2&gt;
+
+&lt;p&gt;A metadata file inside of the Album Name folder will supersede a metadata file of the same name in the Artist Name directory. (ie. If both &lt;code&gt;2007 In Rainbows/.genre.txt&lt;/code&gt; and &lt;code&gt;Radiohead/.genre.txt&lt;/code&gt; exist in the example above, the data from &lt;code&gt;2007 In Rainbows/.genre.txt&lt;/code&gt; will be used.&lt;br&gt;
+Only the first line is read for files that are only meant to contain a single value (ie. .artist.txt). Any additional data is ignored.  &lt;/p&gt;
+
+&lt;h4&gt;.album.txt&lt;/h4&gt;
+
+&lt;p&gt;Contains the title of the album.  &lt;/p&gt;
+
+&lt;h4&gt;.albumartist.txt&lt;/h4&gt;
+
+&lt;p&gt;Contains the name to be used in the Album Artist field.&lt;br&gt;
+Example usage: Thee Silver Mt. Zion Memorial Orchestra has used several different names for various releases, but you don&amp;#39;t want them randomly sorted everywhere. Album Artist is supported by most MP3 players and will allow all releases to be sorted together, but display the right artist name for the release.  &lt;/p&gt;
+
+&lt;h4&gt;.artist.txt&lt;/h4&gt;
+
+&lt;p&gt;Contains the artist name.&lt;/p&gt;
+
+&lt;h4&gt;.genre.txt&lt;/h4&gt;
+
+&lt;p&gt;Contains the genre name for the artist or album.    &lt;/p&gt;
+
+&lt;h4&gt;.tracks01.txt; tracks02.txt; &amp;amp;c&lt;/h4&gt;
+
+&lt;p&gt;The title of the album tracks. The first line corresponds to the first track and so on. In the event of a multi-disc album, the metadata file should be .tracks01.txt, tracks02.txt and so on.  &lt;/p&gt;
+
+&lt;h3&gt;Locations&lt;/h3&gt;
+
+&lt;h4&gt;Within the Artist Name folder, the following metadata files are supported:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;.artist.txt&lt;/li&gt;
+&lt;li&gt;.genre.txt&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Within the Album Name folder, the following metadata files are supported:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;.album.txt&lt;/li&gt;
+&lt;li&gt;.albumartist.txt&lt;/li&gt;
+&lt;li&gt;.artist.txt&lt;/li&gt;
+&lt;li&gt;.genre.txt&lt;/li&gt;
+&lt;li&gt;.tracks01.txt&lt;/li&gt;
+&lt;li&gt;.year.txt&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 01 Mar 2014 00:00:00 -0800</pubDate>
+        <link>https://robotmachine.github.io/projects/2014/03/01/rt.html</link>
+        <guid isPermaLink="true">https://robotmachine.github.io/projects/2014/03/01/rt.html</guid>
         
         
         <category>projects</category>
