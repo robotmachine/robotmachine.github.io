@@ -44,7 +44,7 @@
 <h4>Usage</h4>
 
 <p>The first time you run <code>ql</code> it will try to figure out where your Ledger data file is located based on <code>$LEDGER</code> and <code>$LEDGER_FILE</code> environment variables and store this in a ~/.qlrc file. If nothing is found, it will just ask you.  </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">usage: ql [-h] [-f LEDGER_FILE] [-a ACCOUNT] [-m MERCHANT] [-c CATEGORY]
+<div class="highlight"><pre><code class="language-" data-lang="">usage: ql [-h] [-f LEDGER_FILE] [-a ACCOUNT] [-m MERCHANT] [-c CATEGORY]
           [-e EXPENSE] [-t AMOUNT] [-s] [-x] [--list] [--set-acct]
           [--set-merch] [--set-cat] [--config ALT_CONFIG] [-v]
 
@@ -61,7 +61,7 @@ optional arguments:
   -c CATEGORY, --category CATEGORY
                         Set transaction category.
   -e EXPENSE, --expense EXPENSE
-                        Set expense category. (Prepends &#39;Expenses:&#39;
+                        Set expense category. (Prepends 'Expenses:'
   -t AMOUNT, --amount AMOUNT
                         Set transaction amount.
   -s, --split           Split payment.
@@ -78,7 +78,7 @@ optional arguments:
 <p><code>ql</code> keeps all data in <code>$HOME/.qlrc</code><br>
 Here is a sample of what one might look like:<br>
 <code>$&gt; cat ~/.qlrc</code>  </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">[file]  
+<div class="highlight"><pre><code class="language-" data-lang="">[file]  
 ledger_file = /home/robotmachine/doc/Ledger.dat  
 
 [account]
@@ -112,15 +112,15 @@ SQ = Expenses:Auto:Fuel
 <p>Everyone loves examples. The above .qlrc file is assumed for the examples.  </p>
 
 <p><code>ql -m SD -t 27.50</code> will append the following to /home/robotmachine/doc/Ledger.dat  </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">2014-11-01 * Sundance Natural Foods  
+<div class="highlight"><pre><code class="language-" data-lang="">2014-11-01 * Sundance Natural Foods  
     Expenses:Groceries      $27.50  
     Assets:MyBank:Chequing  
 </code></pre></div>
 <h5>Split Transaction</h5>
 
 <p><code>ql -m SD -t 100</code></p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Total is $100.00  
-Enter &#39;0&#39; for the remainder.  
+<div class="highlight"><pre><code class="language-" data-lang="">Total is $100.00  
+Enter '0' for the remainder.  
 
 Enter amount for split number 1:        $75  
 Enter category for split number 1:      Expenses:Expenses:Groceries  
