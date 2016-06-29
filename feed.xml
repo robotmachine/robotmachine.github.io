@@ -6,9 +6,48 @@
 </description>
     <link>https://robotmachine.github.io/</link>
     <atom:link href="https://robotmachine.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Jun 2016 23:10:04 -0400</pubDate>
-    <lastBuildDate>Tue, 28 Jun 2016 23:10:04 -0400</lastBuildDate>
+    <pubDate>Wed, 29 Jun 2016 10:22:30 -0400</pubDate>
+    <lastBuildDate>Wed, 29 Jun 2016 10:22:30 -0400</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>Carrot, Coriander, and Parsnip Soup</title>
+        <description>&lt;h1&gt;Carrot, Coriander, and Parsnip Soup&lt;/h1&gt;
+
+&lt;p&gt;Servings: 5  &lt;/p&gt;
+
+&lt;h2&gt;Ingredients&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;3 tbsp extra virgin olive oil&lt;/li&gt;
+&lt;li&gt;8 large carrots, peeled and sliced&lt;/li&gt;
+&lt;li&gt;2 parsnips, peeled and sliced&lt;/li&gt;
+&lt;li&gt;4 shallots, minced&lt;/li&gt;
+&lt;li&gt;1 tsp ground coriander&lt;/li&gt;
+&lt;li&gt;1 tsp sea salt&lt;/li&gt;
+&lt;li&gt;black pepper&lt;/li&gt;
+&lt;li&gt;4 cups chicken stock&lt;/li&gt;
+&lt;li&gt;3/4 cup milk&lt;/li&gt;
+&lt;li&gt;1/4 cup cilantro, finely chopped&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Method&lt;/h2&gt;
+
+&lt;p&gt;Heat the olive oil in a large saucepan with lid. Add carrots, parsnips, shallots, coriander, salt, and a pinch of pepper to the pot. Stir to combine. Reduce heat to medium-low, and sauté until tender; about 10 minutes.&lt;br&gt;
+Add the stock and milk, increase heat to high, and bring to a boil.&lt;br&gt;
+Stir, reduce heat to medium-low and simmer for 20 minutes, or until the vegetables are tender.&lt;br&gt;
+Working in batches, carefully transfer to a blender (do not fill more than halfway). Remove center spout from lid to prevent it from bursting. Place lid on the blender, and hold a kitchen towel over the centre hole. Purée until smooth. Pour the soup back into the saucepan and heat over low until warm. Taste and adjust seasonings. Garnish with cilantro.  &lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Jun 2016 00:00:00 -0400</pubDate>
+        <link>https://robotmachine.github.io/recipes/plan/2016/06/03/Carrot.Coriander.Parsnip.Soup.html</link>
+        <guid isPermaLink="true">https://robotmachine.github.io/recipes/plan/2016/06/03/Carrot.Coriander.Parsnip.Soup.html</guid>
+        
+        
+        <category>recipes</category>
+        
+        <category>plan</category>
+        
+      </item>
     
       <item>
         <title>Meal Plan Week Ending 3 July, 2016</title>
@@ -420,74 +459,6 @@ You can hear a computer say it &lt;a href=&quot;http://translate.google.com/#en/
         
         
         <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>PushText</title>
-        <description>&lt;h4&gt;Installation:&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Download &lt;a href=&quot;https://github.com/robotmachine/PushText/tarball/master&quot;&gt;the archive&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;Run &lt;code&gt;chmod +x pt&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Move &lt;code&gt;pt&lt;/code&gt; to &lt;code&gt;/usr/local/bin&lt;/code&gt; or somewhere else in &lt;code&gt;$PATH&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4&gt;Configuration:&lt;/h4&gt;
-
-&lt;p&gt;If you run &lt;code&gt;pt&lt;/code&gt; without any setup it will ask for your API token and your user key.&lt;br&gt;
-The user key is on your &lt;a href=&quot;http://pushover.net&quot;&gt;user page&lt;/a&gt;.&lt;br&gt;
-You must create an application with Pushover in order to send messages.&lt;br&gt;
-See &lt;a href=&quot;https://pushover.net/apps&quot;&gt;Pushover Apps&lt;/a&gt; for more information.  &lt;/p&gt;
-
-&lt;h4&gt;Examples:&lt;/h4&gt;
-
-&lt;p&gt;The simplest example would be to let you know when something finishes on your computer.
-&lt;code&gt;$&amp;gt; make ; make install ; pt --title &amp;quot;make&amp;quot; --message &amp;quot;Done compiling.&amp;quot;&lt;/code&gt;&lt;br&gt;
-The above will result in this on your phone:&lt;br&gt;
-&lt;img src=&quot;http://mlkshk.com/r/L2TK.jpg&quot; alt=&quot;pt example&quot; title=&quot;pt example&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;You could also use it to let you know if something breaks.
-&lt;code&gt;$&amp;gt; some script ; if [ &amp;quot;$?&amp;quot; -ne &amp;quot;0&amp;quot; ]; then pt -m &amp;quot;Oops, you bwoke it.&amp;quot; ; fi&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Send your &lt;a href=&quot;https://github.com/ginatrapani/todo.txt-cli&quot;&gt;Todo.txt&lt;/a&gt; list daily:
-&lt;code&gt;bash
-$&amp;gt; crontab -l | grep pt
-30 10 * * * /usr/local/bin/pt --title &amp;quot;Todo&amp;quot; -m &amp;quot;`/usr/local/bin/todo ls`&amp;quot; -d iphone
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The possibilities are endless! (As long as the possibilities only include sending messages to your phone.)  &lt;/p&gt;
-
-&lt;h4&gt;Manual:&lt;/h4&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;usage: pt [-h] [-u USER_KEY] [-t TOKEN_KEY] [-p PRIORITY] [-m MESSAGE]
-          [-d DEVICE] [--title TITLE] [--url URL] [--urltitle URL_TITLE] [-v]
-
-PushText: Command line tool for http://pushover.net
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -u USER_KEY, --user-key USER_KEY
-                        User key instead of reading from settings.
-  -t TOKEN_KEY, --token-key TOKEN_KEY
-                        Token key instead of reading from settings.
-  -p PRIORITY, --priority PRIORITY
-                        Set priority of high or low. Default is normal.
-  -m MESSAGE, --message MESSAGE
-                        Message to send. Default is &quot;PushText&quot;
-  -d DEVICE, --device DEVICE
-                        Device name to receive message. Default sends to all
-                        devices.
-  --title TITLE         Title or application name. Default is PushText
-  --url URL             Optional URL to accompany your message.
-  --urltitle URL_TITLE  Title to go with your URL.
-  -v, --version         Print version.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        <pubDate>Tue, 23 Oct 2012 00:00:00 -0400</pubDate>
-        <link>https://robotmachine.github.io/projects/2012/10/23/pt.html</link>
-        <guid isPermaLink="true">https://robotmachine.github.io/projects/2012/10/23/pt.html</guid>
-        
-        
-        <category>projects</category>
         
       </item>
     
