@@ -33,41 +33,39 @@
   Command Line Tool for Pushover.net<br>
   <a href="https://github.com/robotmachine/PushText">View PushText on Github</a>
 <div class="box">
-  <h4>Installation:</h4>
-
+  <h4 id="installation">Installation:</h4>
 <ol>
-<li>Download <a href="https://github.com/robotmachine/PushText/tarball/master">the archive</a><br></li>
-<li>Run <code>chmod +x pt</code></li>
-<li>Move <code>pt</code> to <code>/usr/local/bin</code> or somewhere else in <code>$PATH</code></li>
+  <li>Download <a href="https://github.com/robotmachine/PushText/tarball/master">the archive</a></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">chmod +x pt</code></li>
+  <li>Move <code class="language-plaintext highlighter-rouge">pt</code> to <code class="language-plaintext highlighter-rouge">/usr/local/bin</code> or somewhere else in <code class="language-plaintext highlighter-rouge">$PATH</code></li>
 </ol>
 
-<h4>Configuration:</h4>
+<h4 id="configuration">Configuration:</h4>
 
-<p>If you run <code>pt</code> without any setup it will ask for your API token and your user key.<br>
-The user key is on your <a href="http://pushover.net">user page</a>.<br>
-You must create an application with Pushover in order to send messages.<br>
-See <a href="https://pushover.net/apps">Pushover Apps</a> for more information.  </p>
+<p>If you run <code class="language-plaintext highlighter-rouge">pt</code> without any setup it will ask for your API token and your user key.<br />
+The user key is on your <a href="http://pushover.net">user page</a>.<br />
+You must create an application with Pushover in order to send messages.<br />
+See <a href="https://pushover.net/apps">Pushover Apps</a> for more information.</p>
 
-<h4>Examples:</h4>
+<h4 id="examples">Examples:</h4>
 
 <p>The simplest example would be to let you know when something finishes on your computer.
-<code>$&gt; make ; make install ; pt --title &quot;make&quot; --message &quot;Done compiling.&quot;</code><br>
-The above will result in this on your phone:<br>
-<img src="http://mlkshk.com/r/L2TK.jpg" alt="pt example" title="pt example"></p>
+<code class="language-plaintext highlighter-rouge">$&gt; make ; make install ; pt --title "make" --message "Done compiling."</code><br />
+The above will result in this on your phone:<br />
+<img src="http://mlkshk.com/r/L2TK.jpg" alt="pt example" title="pt example" /></p>
 
 <p>You could also use it to let you know if something breaks.
-<code>$&gt; some script ; if [ &quot;$?&quot; -ne &quot;0&quot; ]; then pt -m &quot;Oops, you bwoke it.&quot; ; fi</code></p>
+<code class="language-plaintext highlighter-rouge">$&gt; some script ; if [ "$?" -ne "0" ]; then pt -m "Oops, you bwoke it." ; fi</code></p>
 
-<p>Send your <a href="https://github.com/ginatrapani/todo.txt-cli">Todo.txt</a> list daily:
-<code>bash
-$&gt; crontab -l | grep pt
-30 10 * * * /usr/local/bin/pt --title &quot;Todo&quot; -m &quot;`/usr/local/bin/todo ls`&quot; -d iphone
-</code></p>
+<p>Send your <a href="https://github.com/ginatrapani/todo.txt-cli">Todo.txt</a> list daily:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> crontab <span class="nt">-l</span> | <span class="nb">grep </span>pt
+30 10 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/local/bin/pt <span class="nt">--title</span> <span class="s2">"Todo"</span> <span class="nt">-m</span> <span class="s2">"</span><span class="sb">`</span>/usr/local/bin/todo <span class="nb">ls</span><span class="sb">`</span><span class="s2">"</span> <span class="nt">-d</span> iphone
+</code></pre></div></div>
 
-<p>The possibilities are endless! (As long as the possibilities only include sending messages to your phone.)  </p>
+<p>The possibilities are endless! (As long as the possibilities only include sending messages to your phone.)</p>
 
-<h4>Manual:</h4>
-<div class="highlight"><pre><code class="language-" data-lang="">usage: pt [-h] [-u USER_KEY] [-t TOKEN_KEY] [-p PRIORITY] [-m MESSAGE]
+<h4 id="manual">Manual:</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usage: pt [-h] [-u USER_KEY] [-t TOKEN_KEY] [-p PRIORITY] [-m MESSAGE]
           [-d DEVICE] [--title TITLE] [--url URL] [--urltitle URL_TITLE] [-v]
 
 PushText: Command line tool for http://pushover.net
@@ -89,7 +87,8 @@ optional arguments:
   --url URL             Optional URL to accompany your message.
   --urltitle URL_TITLE  Title to go with your URL.
   -v, --version         Print version.
-</code></pre></div>
+</code></pre></div></div>
+
 </div>
 
         </div>

@@ -33,18 +33,17 @@
   Ledger (http://ledger-cli.org) Entry Tool<br>
   <a href="https://github.com/robotmachine/QuickLedger">View QuickLedger on Github</a>
 <div class="box">
-  <h4>Install</h4>
-
+  <h4 id="install">Install</h4>
 <ol>
-<li>Download <a href="https://github.com/robotmachine/QuickLedger/tarball/master">the archive</a></li>
-<li>Run <code>chmod +x ql</code></li>
-<li>Move <code>ql</code> to <code>/usr/local/bin/</code> or somewhere else in <code>$PATH</code></li>
+  <li>Download <a href="https://github.com/robotmachine/QuickLedger/tarball/master">the archive</a></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">chmod +x ql</code></li>
+  <li>Move <code class="language-plaintext highlighter-rouge">ql</code> to <code class="language-plaintext highlighter-rouge">/usr/local/bin/</code> or somewhere else in <code class="language-plaintext highlighter-rouge">$PATH</code></li>
 </ol>
 
-<h4>Usage</h4>
+<h4 id="usage">Usage</h4>
+<p>The first time you run <code class="language-plaintext highlighter-rouge">ql</code> it will try to figure out where your Ledger data file is located based on <code class="language-plaintext highlighter-rouge">$LEDGER</code> and <code class="language-plaintext highlighter-rouge">$LEDGER_FILE</code> environment variables and store this in a ~/.qlrc file. If nothing is found, it will just ask you.</p>
 
-<p>The first time you run <code>ql</code> it will try to figure out where your Ledger data file is located based on <code>$LEDGER</code> and <code>$LEDGER_FILE</code> environment variables and store this in a ~/.qlrc file. If nothing is found, it will just ask you.  </p>
-<div class="highlight"><pre><code class="language-" data-lang="">usage: ql [-h] [-f LEDGER_FILE] [-a ACCOUNT] [-m MERCHANT] [-c CATEGORY]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usage: ql [-h] [-f LEDGER_FILE] [-a ACCOUNT] [-m MERCHANT] [-c CATEGORY]
           [-e EXPENSE] [-t AMOUNT] [-s] [-x] [--list] [--set-acct]
           [--set-merch] [--set-cat] [--config ALT_CONFIG] [-v]
 
@@ -72,20 +71,21 @@ optional arguments:
   --set-cat             Set up categories in config file.
   --config ALT_CONFIG   Specify alternate config file.
   -v, --version         Print version.
-</code></pre></div>
-<h4>Configuration File</h4>
+</code></pre></div></div>
 
-<p><code>ql</code> keeps all data in <code>$HOME/.qlrc</code><br>
-Here is a sample of what one might look like:<br>
-<code>$&gt; cat ~/.qlrc</code>  </p>
-<div class="highlight"><pre><code class="language-" data-lang="">[file]  
+<h4 id="configuration-file">Configuration File</h4>
+<p><code class="language-plaintext highlighter-rouge">ql</code> keeps all data in <code class="language-plaintext highlighter-rouge">$HOME/.qlrc</code><br />
+Here is a sample of what one might look like:<br />
+<code class="language-plaintext highlighter-rouge">$&gt; cat ~/.qlrc</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[file]  
 ledger_file = /home/robotmachine/doc/Ledger.dat  
-
+  
 [account]
 default_account = CHEQ 
 CHEQ = Assets:MyBank:Chequing  
 SAVE = Assets:MyBank:Savings  
-
+  
 [merchant]  
 SD = Sundance Natural Foods  
 SQ = SeQUential Biofuels  
@@ -94,47 +94,50 @@ SQ = SeQUential Biofuels
 groc = Expenses:Groceries
 SD = Expenses:Groceries  
 SQ = Expenses:Auto:Fuel  
-</code></pre></div>
-<p>The ~/.qlrc file can be manually edited or you can use the various setup options, --set-acct, --set-cat, --set-merch to have <code>ql</code> add them to ~/.qlrc for you.  </p>
+</code></pre></div></div>
 
-<h4>Usage Continued</h4>
+<p>The ~/.qlrc file can be manually edited or you can use the various setup options, –set-acct, –set-cat, –set-merch to have <code class="language-plaintext highlighter-rouge">ql</code> add them to ~/.qlrc for you.</p>
 
-<p>When using the <code>ql -a ACCOUNT</code> option, <code>ql</code> will attempt to match the entry with one of the accounts in the [account] section of ~/.qlrc If a match is not found, the literal string will be used.  </p>
+<h4 id="usage-continued">Usage Continued</h4>
+<p>When using the <code class="language-plaintext highlighter-rouge">ql -a ACCOUNT</code> option, <code class="language-plaintext highlighter-rouge">ql</code> will attempt to match the entry with one of the accounts in the [account] section of ~/.qlrc If a match is not found, the literal string will be used.</p>
 
-<p>The same is true of the <code>ql -m MERCHANT</code> option. If a match is found for the merchant and the same entry is present under [category], then the category will be used. If that does not match, then it will prompt interactively for an expense category.  </p>
+<p>The same is true of the <code class="language-plaintext highlighter-rouge">ql -m MERCHANT</code> option. If a match is found for the merchant and the same entry is present under [category], then the category will be used. If that does not match, then it will prompt interactively for an expense category.</p>
 
-<p>The -s/--split option will take the -t amount as the total (or prompt for one) and prompt through splitting the transaction between multiple categories (see example). <code>ql</code> does its best to make sure the transaction will balance and will add the total as a negative balance which will cause an error in <code>Ledger</code> if the amounts do not reconcile. Entering a 0 for any of the splits will use the remainder of the balance.  </p>
+<p>The -s/–split option will take the -t amount as the total (or prompt for one) and prompt through splitting the transaction between multiple categories (see example). <code class="language-plaintext highlighter-rouge">ql</code> does its best to make sure the transaction will balance and will add the total as a negative balance which will cause an error in <code class="language-plaintext highlighter-rouge">Ledger</code> if the amounts do not reconcile. Entering a 0 for any of the splits will use the remainder of the balance.</p>
 
-<p>The -x/--not-cleared option will use a ! instead of * between the date and the merchant as per the <code>Ledger</code> documentation to mark the transaction as not cleared. Please see <code>Ledger</code> documentation on how this works. Note: You will need to manually edit your ledger.dat file to mark it as cleared. Re-running <code>ql</code> without the -x will not mark the transaction as cleared-- it will only add an additional entry for the same amount.  </p>
+<p>The -x/–not-cleared option will use a ! instead of * between the date and the merchant as per the <code class="language-plaintext highlighter-rouge">Ledger</code> documentation to mark the transaction as not cleared. Please see <code class="language-plaintext highlighter-rouge">Ledger</code> documentation on how this works. Note: You will need to manually edit your ledger.dat file to mark it as cleared. Re-running <code class="language-plaintext highlighter-rouge">ql</code> without the -x will not mark the transaction as cleared– it will only add an additional entry for the same amount.</p>
 
-<h4>Examples</h4>
+<h4 id="examples">Examples</h4>
+<p>Everyone loves examples. The above .qlrc file is assumed for the examples.</p>
 
-<p>Everyone loves examples. The above .qlrc file is assumed for the examples.  </p>
+<p><code class="language-plaintext highlighter-rouge">ql -m SD -t 27.50</code> will append the following to /home/robotmachine/doc/Ledger.dat</p>
 
-<p><code>ql -m SD -t 27.50</code> will append the following to /home/robotmachine/doc/Ledger.dat  </p>
-<div class="highlight"><pre><code class="language-" data-lang="">2014-11-01 * Sundance Natural Foods  
-    Expenses:Groceries      $27.50  
-    Assets:MyBank:Chequing  
-</code></pre></div>
-<h5>Split Transaction</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2014-11-01 * Sundance Natural Foods  
+	Expenses:Groceries		$27.50  
+	Assets:MyBank:Chequing  
+</code></pre></div></div>
 
-<p><code>ql -m SD -t 100</code></p>
-<div class="highlight"><pre><code class="language-" data-lang="">Total is $100.00  
+<h5 id="split-transaction">Split Transaction</h5>
+<p><code class="language-plaintext highlighter-rouge">ql -m SD -t 100</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Total is $100.00  
 Enter '0' for the remainder.  
-
+  
 Enter amount for split number 1:        $75  
 Enter category for split number 1:      Expenses:Expenses:Groceries  
-
+  
 $25.00 remaining.  
 Enter amount for split number 2:        $0  
 Enter category for split number 2:      Expenses:Heathcare:Supplements  
-
+  
 Wrote entry to /home/robotmachine/doc/Ledger.dat:  
 2014-12-27 * Sundance Natural Foods 
         Expenses:Heathcare:Supplements  $25.00    
         Expenses:Groceries              $75.00  
         Assets:MyBank:Chequing          $-100.00  
-</code></pre></div>
+</code></pre></div></div>
+
+
 </div>
 
         </div>
